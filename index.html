@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
 
+    <p id="1"></p>
+
+    <script>
+        fetch('./dummy.json')
+            .then((response) => response.json())
+            .then((data) => 
+                document.getElementById(1).innerHTML=data    
+            );
+
+    </script>
 </body>
+
 </html>
