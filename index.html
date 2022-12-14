@@ -13,9 +13,11 @@
     <script>
         fetch('./dummy.json')
             .then((response) => response.json())
-            .then((data) => 
-                document.getElementById(1).innerHTML=data    
-            );
+            .then((data) => document.body.innerHTML = Object.keys(data).map(n => n + ": x <br>"));
+            // .then((data) => document.body.innerHTML = Object.keys(data)[0] + ": " + Object.values(data)[0]);
+            // .then((data) => 
+            //     document.getElementById(1).innerHTML=data.get
+            // );
 
     </script>
 </body>
