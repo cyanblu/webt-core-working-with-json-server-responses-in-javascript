@@ -1,0 +1,2 @@
+$array = array("Lehrer", "Engineer", "Doctor", "Lawyer", "Scientist", "Artist", "Writer",
+"Accountant", "Computer Programmer", "Construction Worker"));
