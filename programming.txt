@@ -1,2 +1,52 @@
-$array = array("Lehrer", "Engineer", "Doctor", "Lawyer", "Scientist", "Artist", "Writer",
-"Accountant", "Computer Programmer", "Construction Worker"));
+UserStory 3
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Job Generator</title>
+</head>
+<body>
+  <button onclick="getRandomJob()">Get random Career</button>
+  <p id="job-display"></p>
+  <script>
+    cons jobs = ["Teacher", "Engineer", "Doctor", "Lawyer", "Scientist", "Artist", "Writer",
+    "Accountant", "Computer Programmer", "Construction Worker"];
+
+    function getRandomJob() {
+      const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
+      document.getElementById("job-display").innerHTML = randomJob;
+    }
+  </script>
+</body>
+</html>
+
+
+UserStory 4
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single Job Display</title>
+</head>
+<body>
+  <div id="job-display">
+    <h2 id="job-title"></h2>
+    <p id="job-place"></p>
+    <p id="job-desc"></p>
+  </div>
+  <script>
+    const jobs = [                  { title: "Teacher", place: "HTL Rennweg", desc: "Teaching students and creating lesson plans" },
+    { title: "Engineer", place: "Selfworker", desc: "Developing software and applications" },
+                  { title: "Nurse", place: "Hospital XYZ", desc: "Providing patient care and support" },
+                  { title: "Lawyer", place: "Law firm DEF", desc: "Providing legal advice and representation" },
+                  { title: "Marketing Manager", place: "Marketing agency GHI", desc: "Developing and implementing marketing strategies" }];
+    function getJob() {
+      const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
+      document.getElementById("job-title").innerHTML = randomJob.title;
+      document.getElementById("job-place").innerHTML = randomJob.place;
+      document.getElementById("job-desc").innerHTML = randomJob.desc;
+    }
+    getJob();
+  </script>
+</body>
+</html>
