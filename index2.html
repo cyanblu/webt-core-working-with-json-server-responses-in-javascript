@@ -2,16 +2,45 @@
 <html>
 <head>
   <title>Random Job Generator</title>
+  <meta charset="UTF-8">
 </head>
 <body>
-<button onclick="getRandomJob()">What Job should you do?</button>
-<p id="job-display"></p>
+<button onclick="getJob()">Lassen Sie das Schicksal entscheiden?!</button>
+<p id="job-titel"></p>
+<p id="job-place"></p>
+<p id="job-description"></p>
 <script>
-  const jobs = dataVar;
+  let clicked = false;
+  let jobs;
 
-  function getRandomJob() {
+  fetch('./OpenJsonData.json')
+          .then(response => response.json())
+          .then(data => jobs = data)
+          .catch(error => console.error(error));
+
+  /*function getRandomJob() {
     const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
-    document.getElementById("job-display").innerHTML = randomJob;
+    document.getElementById("job-display").innerHTML = JSON.stringify(randomJob);
+  }*/
+
+  function getJob() {
+    if (!clicked) {
+      const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
+      document.getElementById("job-titel").innerHTML = randomJob["Titel"];
+      document.getElementById("job-place").innerHTML = randomJob["Place"];
+      document.getElementById("job-description").innerHTML = randomJob["Description"];
+    }
+    if (clicked){
+      if (confirm("Wollen Sie wirklich neu würfeln?") === true) {
+        const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
+        document.getElementById("job-titel").innerHTML = randomJob["Titel"];
+        document.getElementById("job-place").innerHTML = randomJob["Place"];
+        document.getElementById("job-description").innerHTML = randomJob["Description"];
+      }
+
+    }
+    clicked = true;
+
   }
 </script>
 </body>
