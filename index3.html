@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Random Job Generator</title>
 </head>
 <body>
-
+<button onclick="getRandomJob()">Accept your fate</button>
+<p id="job-title"></p>
+<p id="job-place"></p>
+<p id="job-desc"></p>
+<script>
+  const jobs = 0;
+  function getRandomJob() {
+    const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
+    document.getElementById("job-title").innerHTML = randomJob.title;
+    document.getElementById("job-place").innerHTML = randomJob.place;
+    document.getElementById("job-desc").innerHTML = randomJob.desc;
+  }
+  getJob();
+</script>
 </body>
 </html>
