@@ -8,21 +8,25 @@
 
 <body>
 
-    <p id="1"></p>
+    <p id="1">
+        <button onclick="showList()">Show List</button>
+    </p>
+
 
     <script>
 
-
-
-        fetch('./dummy.json')
-            .then((response) => response.json())
-            .then(data => createList(data));
+        function showList() {
+            fetch('./OpenJsonData.json')
+                .then((response) => response.json())
+                .then(data => createList(data));
             //.then((data) => document.body.innerHTML = Object.keys(data).map(n => n + ": x <br>")
             // .then((data) => document.body.innerHTML = Object.keys(data)[0] + ": " + Object.values(data)[0]);
             // .then((data) => 
             //     document.getElementById(1).innerHTML=data.get
+        }
 
         function createList(data) {
+            console.log(data);
             const mainUL = document.createElement('ol');
             for (let i = 0; i < data.result.length; i++) {
                 const studentLI = document.createElement('li');
