@@ -6,11 +6,22 @@
   <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
-<button onclick="getJob()">Lassen Sie das Schicksal entscheiden?!</button>
-  <div>
-<p id="job-titel"></p>
-<p id="job-place"></p>
-<p id="job-description"></p>
+<div class="container">
+  <div class="center">
+      <header>JOB ROULETTE 👏👏</header>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center-button">
+<button onclick="getJob()">>> Lassen Sie das Schicksal entscheiden?! <<</button>
+  </div>
+</div>
+
+<div class="textbox">
+<p id="job-titel"><strong>TITEL: </strong><br><br></p>
+<p id="job-place"><strong>ORT: </strong><br><br></p>
+<p id="job-description"><strong>BESCHREIBUNG: </strong><br><br></p>
 </div>
 <script>
   let clicked = false;
@@ -29,16 +40,16 @@
   function getJob() {
     if (!clicked) {
       const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
-      document.getElementById("job-titel").innerHTML = randomJob["Titel"];
-      document.getElementById("job-place").innerHTML = randomJob["Place"];
-      document.getElementById("job-description").innerHTML = randomJob["Description"];
+      document.getElementById("job-titel").innerHTML += randomJob["Titel"];
+      document.getElementById("job-place").innerHTML += randomJob["Place"];
+      document.getElementById("job-description").innerHTML += randomJob["Description"];
     }
     if (clicked){
       if (confirm("Wollen Sie wirklich neu würfeln?") === true) {
         const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
-        document.getElementById("job-titel").innerHTML = randomJob["Titel"];
-        document.getElementById("job-place").innerHTML = randomJob["Place"];
-        document.getElementById("job-description").innerHTML = randomJob["Description"];
+        document.getElementById("job-titel").innerHTML += randomJob["Titel"];
+        document.getElementById("job-place").innerHTML += randomJob["Place"];
+        document.getElementById("job-description").innerHTML += randomJob["Description"];
       }
 
     }
