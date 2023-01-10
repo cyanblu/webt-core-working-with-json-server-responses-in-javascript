@@ -17,18 +17,21 @@
 
 <script>
 
+    let dataVar;
+
     fetch('./OpenJsonData.json')
         .then(response => response.json())
         .then(data => {
             // code to display the data on the page
             // for example, you could create a table and insert the data into it
+            dataVar = data;
             let table = document.createElement('table');
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 1000; i++) {
                 let row = table.insertRow();
-                for (let j = 0; j < 8; j++) {
+                for (let j = 0; j < 1; j++) {
                     let cell = row.insertCell();
                     console.log(data[i]);
-                    cell.innerHTML = data[i];
+                    cell.innerHTML = JSON.stringify(data[i]);
                 }
             }
             document.body.appendChild(table);

@@ -7,7 +7,7 @@
 <button onclick="getRandomJob()">What Job should you do?</button>
 <p id="job-display"></p>
 <script>
-  const jobs = 0;
+  const jobs = dataVar;
 
   function getRandomJob() {
     const randomJob = jobs[Math.floor(Math.random() * jobs.length)];
