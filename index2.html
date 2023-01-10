@@ -3,12 +3,15 @@
 <head>
   <title>Random Job Generator</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
 <button onclick="getJob()">Lassen Sie das Schicksal entscheiden?!</button>
+  <div>
 <p id="job-titel"></p>
 <p id="job-place"></p>
 <p id="job-description"></p>
+</div>
 <script>
   let clicked = false;
   let jobs;
